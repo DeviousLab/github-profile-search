@@ -17,9 +17,11 @@ export const AlertProvider = ({ children }) => {
     setTimeout(() => dispatch({ type: 'CLEAR_ALERT' }), 5000);
   }
 
-  return <AlertContext.Provider value={{alert: state, setAlert}}>
-    {children}
-  </AlertContext.Provider>
+  return (
+    <AlertContext.Provider value={{ alert: state, setAlert }}>
+      {children}
+    </AlertContext.Provider>
+  )
 }
 
 export default AlertContext;
