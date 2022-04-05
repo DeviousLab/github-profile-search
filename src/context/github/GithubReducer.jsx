@@ -1,5 +1,5 @@
 const githubReducer = (state, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case "SEARCH_USERS":
       return {
         ...state,
@@ -21,6 +21,12 @@ const githubReducer = (state, action) => {
       return {
         ...state,
         user: action.payload,
+        loading: false
+      }
+    case "GET_REPOS":
+      return {
+        ...state,
+        repos: action.payload,
         loading: false
       }
     default:
